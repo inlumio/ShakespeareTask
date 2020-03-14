@@ -51,12 +51,7 @@ public class SonnetsTaskController {
         boolean isEnd = false;
         while(!isEnd) {
             sonnetsTaskView.printlnMessage(bundle.getString("inputWord"));
-            try {
-                input = InputHelper.inputWord();
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-
+            input = InputHelper.inputWord();
             if (wordsHandler.doesMapContainsWord(input)) {
                 Map<String, Integer> parametersOfWord = wordsHandler.returnParametersOfWord(input);
                 parametersOfWord = SortHelper.sortByValue(parametersOfWord);

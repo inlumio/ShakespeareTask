@@ -13,8 +13,14 @@ public class InputHelper {
     private static BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
     private static ResourceBundle bundle;
 
-    public static String inputWord() throws IOException {
-        return bufferedReader.readLine();
+    public static String inputWord() {
+        while (true) {
+            try {
+                return bufferedReader.readLine();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
     }
 
 
