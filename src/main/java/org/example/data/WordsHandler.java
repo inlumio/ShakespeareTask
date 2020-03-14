@@ -1,7 +1,6 @@
 package org.example.data;
 
 import java.util.*;
-import java.util.stream.Stream;
 
 public class WordsHandler {
 
@@ -29,14 +28,12 @@ public class WordsHandler {
         return uniqueWords.size();
     }
 
-    public static <K, V extends Comparable<? super V>> Map<K, V> sortByValue( Map<K, V> map )
-    {
-        Map<K,V> result = new LinkedHashMap<>();
-        Stream<Map.Entry<K,V>> st = map.entrySet().stream();
-
-        st.sorted(Comparator.comparing(e -> e.getValue()))
-                .forEach(e ->result.put(e.getKey(),e.getValue()));
-
-        return result;
+    public boolean doesMapContainsWord(String word){
+        return uniqueWords.containsKey(word);
     }
+
+    public Map<String, Integer> returnParametersOfWord(String word){
+        return uniqueWords.get(word);
+    }
+
 }
