@@ -7,7 +7,6 @@ import org.example.helper.InputHelper;
 import org.example.helper.SortHelper;
 import org.example.view.SonnetsTaskView;
 
-import java.io.IOException;
 import java.util.Map;
 import java.util.ResourceBundle;
 
@@ -47,7 +46,7 @@ public class SonnetsTaskController {
     }
 
     public void userInput(){
-        String input = null;
+        String input;
         boolean isEnd = false;
         while(!isEnd) {
             sonnetsTaskView.printlnMessage(bundle.getString("inputWord"));
